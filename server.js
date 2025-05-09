@@ -19,6 +19,7 @@ const static = require("./routes/static")
  *************************/
 app.set("view engine", "ejs")
 app.use(expressLayouts)
+app.use(express.static("public")) // static files in public folder
 app.set("layout", "./layouts/layout") // not at views root
 
 /* ***********************

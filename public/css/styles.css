@@ -1,6 +1,162 @@
 /******* Change Box Model ***************/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-decoration: none;
+
+  font-family: "Noto Serif", serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: x-large;
+  font-weight: 700;
+}
+
+#top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  max-width: 95vw;
+}
+
+#top-header a:nth-of-type(1) {
+  color: black;
+}
+
+.siteName {
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+nav>ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 2px;
+  background-color: black;
+  color: white;
+}
+
+#main-content {
+  padding: 10px 2px;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  padding: 10px;
+  /* border: 1px solid blue; */
+}
+
+.vechicle-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* padding: 10px 2px; */
+  background-color: rgba(255, 255, 255, .5);
+  gap: 5px;
+  /* padding-right: 10px; */
+  padding: 2px 10px 5px 0;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+/* .vechicle-info a {
+  border: 1px solid black;
+} */
+
+/* .vechicle-info a img {
+  width: 100%;
+} */
+
+/* .vechicle-info a {
+  width: 8rem;
+} */
+
+.first img {
+  width: 100%;
+  padding: 20px;
+}
+
+.vechicle-info h2 {
+  font-size: large;
+  font-weight: 600;
+}
+
+.vechicle-info p {
+  font-size: small;
+  font-weight: 400;
+}
+
+.vechicle-info a {
+  color: black;
+  background-color: #01b0d3;
+  padding: 5px;
+}
+
+.hero {
+  padding: 10px 2px;
+}
+
+.hero h3 {
+  font-size: large;
+  font-weight: 700;
+}
+
+.hero div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 2px;
+  gap: 10px;
+}
+
+.hero div a {
+  width: 3rem;
+  padding: 10px;
+  background-color: #01b0d3;
+}
+
+.hero div img {
+  width: 100%;
+}
+
+.hero ul li {
+  padding: 5px 2px;
+  /* list-style-type: disc; */
+}
+
+@media screen and (min-width: 32rem) {
+  .second {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  #top-header,
+  nav,
+  #main-content,
+  footer {
+    max-width: 70vw;
+    margin: auto;
+  }
 }

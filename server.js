@@ -11,6 +11,8 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
+const baseController = require("./controllers/baseController")
+const inventoryRoute = require("./routes/inventoryRoute")
 
 
 /* ***********************
@@ -37,7 +39,23 @@ app.listen(port, () => {
 })
 
 // Index route
-app.get("/", function(req,res){
-  res.render("index", {title: "Home"})
+// app.get("/", function(req,res){
+//   res.render("index", {title: "Home"})
+// })
+app.get("/",baseController.buildHome)
+// Inventory routes
+app.use("/inv", inventoryRoute)
 
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+  let nav = await utilities.getNav()
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+  res.render("errors/error", {
+    title: err.status || 'Server Error',
+    message: err.message,
+    nav
+  })
 })

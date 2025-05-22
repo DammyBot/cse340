@@ -34,6 +34,19 @@ CREATE TABLE IF NOT EXISTS public.account (
     account_type account_type NOT NULL DEFAULT 'Client'::account_type,
     CONSTRAINT account_pkey PRIMARY KEY (account_id)
 );
+-- Inserting Tony into the account table
+INSERT INTO account (
+        account_firstname,
+        account_lastname,
+        account_email,
+        account_password
+    )
+VALUES (
+        'Tony',
+        'Stark',
+        'tony@starknet.com',
+        'Iam1ronM@n'
+    );
 -- Data for table `classification`
 INSERT INTO public.classification (classification_name)
 VALUES ('Custom'),
